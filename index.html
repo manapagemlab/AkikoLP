@@ -524,23 +524,6 @@
     line-height: 1.7;
     margin-top: 10px;
   }
-  .result-note {
-    display: inline-block;
-    margin-top: 6px;
-    font-family: 'Nunito', sans-serif;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    color: var(--accent);
-    background: var(--accent-pale);
-    padding: 3px 10px;
-    border-radius: 999px;
-    animation: pulse-soft 2.4s ease-in-out infinite;
-  }
-  @keyframes pulse-soft {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50%      { opacity: 0.75; transform: scale(1.04); }
-  }
 
   /* ===== Diagnosis（人気診断コンテンツ） ===== */
   #diagnosis { padding: var(--section-pad) var(--h-pad); }
@@ -1118,8 +1101,8 @@
       <div class="result-label">発達特性のある子を<br>育てる母としての日々</div>
     </div>
     <div class="result-card reveal reveal-delay-2">
-      <div class="result-num"><span class="count" data-target="300">0</span><span class="result-suffix">+</span></div>
-      <div class="result-label">同じ悩みを持つ<br>ママとの対話<br><span class="result-note">現在も増加中</span></div>
+      <div class="result-num"><span class="count" data-target="500">0</span><span class="result-suffix">+</span></div>
+      <div class="result-label">同じ悩みを持つ<br>ママとの対話</div>
     </div>
     <div class="result-card reveal reveal-delay-3">
       <div class="result-num"><span class="count" data-target="98">0</span><span class="result-suffix">%</span></div>
@@ -1158,7 +1141,7 @@
       <span class="diag-link">診断してみる</span>
     </a>
 
-    <a href="https://manapagemlab.github.io/curiosity-diagnosis/LP.html" target="_blank" rel="noopener" class="diag-card reveal reveal-delay-1">
+    <a href="https://manapagemlab.github.io/oyako-ai-diagnosis/" target="_blank" rel="noopener" class="diag-card reveal reveal-delay-1">
       <div class="diag-no">No.02</div>
       <div class="diag-icon">🌱</div>
       <div class="diag-name">好奇心は才能の芽<br>かかわり方診断</div>
@@ -1174,7 +1157,7 @@
       <span class="diag-link">診断してみる</span>
     </a>
 
-    <a href="https://today-gauge-lg3gpfsf4-manapagemlabs-projects.vercel.app" target="_blank" rel="noopener" class="diag-card reveal reveal-delay-2">
+    <a href="https://manapagemlab.github.io/today-gauge-app/" target="_blank" rel="noopener" class="diag-card reveal reveal-delay-2">
       <div class="diag-no">No.03</div>
       <div class="diag-icon">🔋</div>
       <div class="diag-name">今日のゲージ診断</div>
@@ -1185,12 +1168,13 @@
       </p>
       <div class="diag-meta">
         <span class="diag-tag mint">毎日できる</span>
-        <span>5問</span>
+        <span>5カテゴリー</span>
       </div>
       <span class="diag-link">診断してみる</span>
     </a>
 
-    <a href="https://manapagemlab.github.io/mama-yoyuu/" target="_blank" rel="noopener" class="diag-card reveal reveal-delay-3">
+    <div class="diag-card diag-card-coming reveal reveal-delay-3">
+      <div class="coming-badge">COMING SOON</div>
       <div class="diag-no">No.04</div>
       <div class="diag-icon">☕</div>
       <div class="diag-name">ママの余裕見える化診断</div>
@@ -1203,8 +1187,8 @@
         <span class="diag-tag">人気予定</span>
         <span>12問</span>
       </div>
-      <span class="diag-link">診断してみる</span>
-    </a>
+      <span class="diag-link diag-link-disabled">準備中</span>
+    </div>
   </div>
 </section>
 
@@ -1376,5 +1360,6 @@
   }, { threshold: 0.3 });
   ctaObserver.observe(ctaSection);
 </script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>
