@@ -2,7 +2,8 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<script>document.documentElement.classList.add('js');</script>
 <title>あっこ｜発達特性っ子の子育てを、くすっと笑える毎日へ</title>
 <meta name="description" content="介護福祉士10年 × 発達特性児育児10年。頑張りすぎたママへ。完璧を手放して、肩の力を抜いて笑える子育てへ。仕組み化のヒントをLINEでお届け。">
 
@@ -56,12 +57,17 @@
   a { color: inherit; text-decoration: none; }
 
   /* ===== Common ===== */
-  .reveal {
+  .js .reveal {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.9s ease, transform 0.9s ease;
   }
-  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .js .reveal.visible { opacity: 1; transform: translateY(0); }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .js .reveal { opacity: 1; transform: none; transition: none; }
+    .hero-scroll { animation: none; }
+  }
   .reveal-delay-1 { transition-delay: 0.1s; }
   .reveal-delay-2 { transition-delay: 0.25s; }
   .reveal-delay-3 { transition-delay: 0.4s; }
@@ -94,6 +100,7 @@
   #hero {
     position: relative;
     min-height: 100vh;
+    min-height: 100svh;
     overflow: hidden;
     background: var(--hero-bg);
     display: flex;
@@ -518,6 +525,14 @@
     margin-left: 2px;
     color: var(--accent-l);
   }
+  .results-note {
+    max-width: 900px;
+    margin: 24px auto 0;
+    text-align: center;
+    font-size: 11px;
+    color: var(--ash);
+    line-height: 1.8;
+  }
   .result-label {
     font-size: clamp(12px, 2.8vw, 13px);
     color: var(--ink2);
@@ -832,6 +847,9 @@
     box-shadow: 0 16px 40px rgba(232,122,93,0.65);
   }
   .cta-btn::before { content: "💬"; }
+  @media (max-width: 480px) {
+    .cta-btn { padding: 18px 24px; gap: 8px; font-size: 16px; white-space: nowrap; }
+  }
   .cta-note {
     margin-top: 24px;
     font-size: 12px;
@@ -886,6 +904,7 @@
     transition: transform 0.4s ease;
     box-shadow: 0 -4px 24px rgba(58,46,46,0.08);
   }
+  .bottom-bar { padding-bottom: calc(12px + env(safe-area-inset-bottom)); }
   .bottom-bar.visible { transform: translateY(0); }
   .bottom-bar-inner {
     max-width: 720px;
@@ -928,7 +947,7 @@
   .bottom-bar-btn::after { content: "→"; }
 
   @media (max-width: 480px) {
-    .bottom-bar { padding: 10px 16px; }
+    .bottom-bar { padding: 10px 16px calc(10px + env(safe-area-inset-bottom)); }
     .bottom-bar-btn { padding: 10px 18px; }
   }
 </style>
@@ -1086,7 +1105,7 @@
 <section id="results">
   <div class="section-head">
     <div class="section-label reveal">NUMBERS</div>
-    <h2 class="section-title reveal reveal-delay-1">数字で見る、20年の現場感。</h2>
+    <h2 class="section-title reveal reveal-delay-1">数字で見る、<br>ふたつの現場。</h2>
     <p class="section-sub reveal reveal-delay-2">
       理論じゃなく、毎日繰り返してきた実感です。
     </p>
@@ -1101,14 +1120,15 @@
       <div class="result-label">発達特性のある子を<br>育てる母としての日々</div>
     </div>
     <div class="result-card reveal reveal-delay-2">
-      <div class="result-num"><span class="count" data-target="500">0</span><span class="result-suffix">+</span></div>
-      <div class="result-label">同じ悩みを持つ<br>ママとの対話</div>
+      <div class="result-num"><span class="count" data-target="7">0</span><span class="result-suffix">/7人</span></div>
+      <div class="result-label">「子どものことで<br>“なるほど”が増えた」と回答</div>
     </div>
     <div class="result-card reveal reveal-delay-3">
-      <div class="result-num"><span class="count" data-target="98">0</span><span class="result-suffix">%</span></div>
-      <div class="result-label">「気持ちがラクになった」<br>と答えたママ</div>
+      <div class="result-num"><span class="count" data-target="4.6" data-decimals="1">0</span><span class="result-suffix">/5</span></div>
+      <div class="result-label">同じように悩む保護者への<br>おすすめ度（平均）</div>
     </div>
   </div>
+  <p class="results-note">※「7/7人」「4.6/5」は、2026年8〜9月「WISCまとめレポート」利用者アンケート（回答7名）の結果です。</p>
 </section>
 
 <!-- ===== DIAGNOSIS（人気発信コンテンツ） ===== -->
@@ -1195,33 +1215,27 @@
 <section id="voice">
   <div class="section-head">
     <div class="section-label reveal">VOICES</div>
-    <h2 class="section-title reveal reveal-delay-1">同じ夜を越えてきた、ママたちの声。</h2>
-    <p class="section-sub reveal reveal-delay-2">&nbsp;</p>
+    <h2 class="section-title reveal reveal-delay-1">実際に受け取った方の声。</h2>
+    <p class="section-sub reveal reveal-delay-2">アンケートで掲載OKをいただいた感想を紹介しています。</p>
   </div>
   <div class="voice-grid">
     <div class="voice-card reveal">
       <p class="voice-text">
-        「私だけじゃなかった」って涙が出ました。
-        頑張り方を間違えてたって、初めて気づけた。
-        今は、息子の癇癪を見ても焦らなくなりました。
+        やる気が無いと思っていたが、違う見方ができ、声かけの仕方を変えれた。
       </p>
-      <div class="voice-author">— 30代 / 男の子のママ</div>
+      <div class="voice-author">— WISCまとめレポート利用者</div>
     </div>
     <div class="voice-card reveal reveal-delay-1">
       <p class="voice-text">
-        仕組み化って、こういうことなんですね。
-        朝の支度バトルが嘘みたいに減って、
-        私が笑ってる時間が増えました。
+        「やってごらん」が1人では全くできなかったことが、今まではサボっているだけ、挑戦意欲がないだけと思っていたけど、脳の特性だったんだなとわかった。
       </p>
-      <div class="voice-author">— 40代 / 兄妹のママ</div>
+      <div class="voice-author">— WISCまとめレポート利用者</div>
     </div>
     <div class="voice-card reveal reveal-delay-2">
       <p class="voice-text">
-        「完璧じゃなくていい」って、
-        ずっと誰かに言ってほしかった。
-        あっこさんの言葉に、何度救われたか。
+        癇癪のときにピコルへ実況中継で相談したら、親の私が落ち着いて様子を見られるようになりました。この数日だけでも、いろんな気づきをもらえています。
       </p>
-      <div class="voice-author">— 30代 / 女の子のママ</div>
+      <div class="voice-author">— 小3のお子さんの保護者（LINE特典モニター）</div>
     </div>
   </div>
 </section>
@@ -1235,7 +1249,8 @@
   </h2>
   <p class="cta-sub reveal reveal-delay-1">
     LINE登録してくれたママへ、<br>
-    20年の現場で見つけた小さな工夫を<br>
+    介護と子育て、ふたつの現場で<br>
+    見つけた小さな工夫を<br>
     そっとお届けします。
   </p>
   <div class="gift-box reveal reveal-delay-2">
@@ -1300,6 +1315,12 @@
 
   // ===== Scroll Reveal =====
   const revealEls = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) {
+    revealEls.forEach(el => el.classList.add('visible'));
+    document.querySelectorAll('.count').forEach(el => {
+      el.textContent = parseFloat(el.dataset.target).toFixed(parseInt(el.dataset.decimals || '0', 10));
+    });
+  } else {
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -1313,16 +1334,17 @@
   // ===== Count Up =====
   const easeOut = t => 1 - Math.pow(1 - t, 3);
   function countUp(el) {
-    const target = parseInt(el.dataset.target, 10);
+    const target = parseFloat(el.dataset.target);
+    const decimals = parseInt(el.dataset.decimals || '0', 10);
     const duration = 1800;
     const start = performance.now();
     function tick(now) {
       const elapsed = now - start;
       const progress = Math.min(elapsed / duration, 1);
-      const value = Math.floor(easeOut(progress) * target);
-      el.textContent = target >= 1000 ? value.toLocaleString() : value;
+      const value = easeOut(progress) * target;
+      el.textContent = value.toFixed(decimals);
       if (progress < 1) requestAnimationFrame(tick);
-      else el.textContent = target >= 1000 ? target.toLocaleString() : target;
+      else el.textContent = target.toFixed(decimals);
     }
     requestAnimationFrame(tick);
   }
@@ -1335,29 +1357,22 @@
     });
   }, { threshold: 0.5 });
   document.querySelectorAll('.count').forEach(el => countObserver.observe(el));
+  }
 
   // ===== Bottom Bar =====
   const bottomBar = document.getElementById('bottomBar');
   const ctaSection = document.getElementById('cta');
 
-  window.addEventListener('scroll', () => {
-    const heroH = hero.offsetHeight;
-    if (window.scrollY > heroH * 0.6) {
-      bottomBar.classList.add('visible');
-    } else {
-      bottomBar.classList.remove('visible');
-    }
-  }, { passive: true });
-
-  // CTA表示中は固定バー非表示
-  const ctaObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        bottomBar.classList.remove('visible');
-      }
-    });
-  }, { threshold: 0.3 });
-  ctaObserver.observe(ctaSection);
+  // CTAセクションが画面に入っている間は固定バーを出さない
+  function updateBottomBar() {
+    const pastHero = window.scrollY > hero.offsetHeight * 0.6;
+    const ctaRect = ctaSection.getBoundingClientRect();
+    const ctaInView = ctaRect.top < window.innerHeight && ctaRect.bottom > 0;
+    bottomBar.classList.toggle('visible', pastHero && !ctaInView);
+  }
+  window.addEventListener('scroll', updateBottomBar, { passive: true });
+  window.addEventListener('resize', updateBottomBar);
+  updateBottomBar();
 </script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
