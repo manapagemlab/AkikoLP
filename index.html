@@ -1297,10 +1297,12 @@
 </div>
 
 <script>
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   // ===== Parallax Hero =====
   const heroPhoto = document.querySelector('.hero-photo');
   const hero = document.getElementById('hero');
-  if (heroPhoto && hero) {
+  if (heroPhoto && hero && !reduceMotion) {
     window.addEventListener('scroll', () => {
       const scrollY = window.scrollY;
       const heroH = hero.offsetHeight;
@@ -1336,6 +1338,10 @@
   function countUp(el) {
     const target = parseFloat(el.dataset.target);
     const decimals = parseInt(el.dataset.decimals || '0', 10);
+    if (reduceMotion) {
+      el.textContent = target.toFixed(decimals);
+      return;
+    }
     const duration = 1800;
     const start = performance.now();
     function tick(now) {
