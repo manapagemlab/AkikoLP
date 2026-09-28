@@ -3,8 +3,8 @@
 介護福祉士10年 × 発達特性児育児10年のあっこさんの公式ランディングページ。
 
 ## 公開URL
-GitHub Pages 公開後、こちらでアクセスできます：
-`https://[YourGitHubUsername].github.io/[RepoName]/`
+Netlify で公開しています（`main` ブランチにマージすると自動で反映されます）。
+Netlify のプロジェクト名：`iridescent-churros-1cebdf`
 
 ## ファイル構成
 ```
