@@ -125,9 +125,18 @@
     object-position: 72% 35%;
     will-change: transform;
   }
-  /* 横長の画面では写真が大きく拡大されるので、顔と頭が入るよう上寄せにする */
-  @media (min-aspect-ratio: 1/1) {
-    .hero-photo { object-position: 65% 8%; }
+  /* 横長の画面では写真を右側に置き（引き伸ばしすぎない）、文字は左側の無地の部分に置く */
+  @media (min-aspect-ratio: 1/1) and (min-width: 900px) {
+    #hero { justify-content: flex-start; }
+    .hero-photo {
+      left: auto;
+      right: 0;
+      width: 58%;
+      object-position: 60% 12%;
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 35%);
+      mask-image: linear-gradient(to right, transparent 0%, #000 35%);
+    }
+    .hero-content { width: 52%; max-width: none; }
   }
   .hero-overlay {
     position: absolute;
