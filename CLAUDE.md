@@ -2,14 +2,17 @@
 
 ## 動画・モーション制作時の参考資料
 
-動画（リール・LP用アニメーション・紹介動画など）を作るときは、次の2つを必ず参考にする。
+動画（リール・LP用アニメーション・紹介動画など）を作るときは、あっこさんが自作した次の2つを必ず参考にする。どちらも動きの方向性とトーンを揃えるための基準。
 
-1. 表現ライブラリ（あっこさんがCodexで作成）
+1. MotionLibrary（あっこさん自作のChrome拡張）
+   - キャッチコピー「伝えたいことに、ちょうどいい動き。」／「100 IDEAS FOR YOUR STORY」
+   - Web・LPから動画まで使える動きの見本が約100個入っている。キーワード・カテゴリーで検索でき、お気に入り機能と並び順（「Web・LPから」など）がある
+   - 各見本で「動き」と「使いどころ」を確認できる
+   - ソースは Google Drive の `web-motion-library-extension` フォルダ（js / css / icons）
+2. 表現ライブラリ（Codexで作成）
    https://hyougen-library.acchi05.chatgpt.site/
-   - 動きや演出の方向性・トーンはここに揃える
-   - クラウド環境からは通信がブロックされて閲覧できないことがある。その場合は推測で中身を補わず、あっこさんにスクショや該当表現の説明をもらう
-2. Motion（Chrome拡張「Motion DevTools」と Motion ライブラリ）
-   - 拡張: https://chromewebstore.google.com/detail/motion-devtools/mnbliiaiiflhmnndmoidhddombbmgcdk
-   - ライブラリ: https://motion.dev/
-   - CSSアニメーション／Motionのアニメーションをタイムラインで確認・編集し、CSSやMotionのコードに書き出せる
-   - 実装するときは Motion（または CSS animation / transition）で書き、DevToolsで調整できる形にしておく
+
+### 使い方のルール
+
+- 動きを選ぶときは、まず「伝えたいこと（見出し・比較・メニューなど）」を決めて、それに合う見本を上の2つから選ぶ
+- どちらもクラウド環境からは直接見られないことがある。その場合は推測で中身を補わず、あっこさんに見本の名前やスクショをもらってから作る
